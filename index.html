@@ -8,47 +8,60 @@
 </head>
 <body>
     <nav>
-        <img src="img/Design ohne Titel.png" alt="Logo der SchönesGlas Optikerkette" width="100px" class="logo">
-        <p class="companyName"><a href="index.html">SchönesGlas</a></p>
-        <button>Unsere Dienstleistungen</button>
-        <button class="callToAction">Kontakt</button>
+        <div class="navbarLeft">
+            <img src="img/Design ohne Titel.png" alt="Logo der SchönesGlas Optikerkette" width="100px" class="logo">
+            <p class="companyName"><a href="index.html">SchönesGlas</a></p>
+        </div>
+        <div class="navbarRight">
+            <button>Unsere Dienstleistungen</button>
+            <button class="callToAction">Kontakt</button>
+        </div>
     </nav>
     
    <!-- Main Content--> 
     <main>
         <!--Langing Frame-->
         <section class="landingFrame">
-            <h1>SchönesGlas</h1>
-            <button>Dienstleistungen</button>
-            <button>Kontakt</button>
-            <img src="img/eyepractice-eyeglasses-7382914_1920.jpg" alt="Mann, welcher in die Kamera schaut.">
+            <h1 class="landingFrameHeading">SchönesGlas</h1>
+            <div class="landingFrameButtons">
+                <button class="buttonServices">Services</button>
+                <button class="contactButton">Kontakt</button>
+            </div>
+            <img class="landingFrameImage" src="img/eyepractice-eyeglasses-7382914_1920.jpg" alt="Mann, welcher in die Kamera schaut.">
         </section>
 
         <!--Feature Gallery-->
         <section class="featureGallery">
-            <h2>Ihre neue Brille beginnt hier!</h2>
-            <p>Wikommen bei SchönesGlas, ihrem Optiker der Zukunft. Hier steht ihre Sicht im Vordergrund. Lassen sie sich durch unsere Erstklassigen Produkte und Services verzaubern.</p>
-            <button>Jetzt Termin vereinbaren</button>
-            <img src="img/dantaslevi-model-3687259_1920.jpg" alt="Eine junge Frau, mit einer schwarzen Brille, welche in die Kamera schaut.">
-            <img src="img/hans-glasses-272399_1920.jpg" alt="Eine Brille auf einem Buch mit einem Textmarker daneben.">
-            <img src="img/nikolapeskova-girl-619665_1920.jpg" alt="Eine Frau mit einer Sonenbrille, welche in einem Rapsfeld steht.">
-            <img src="img/radu_floryn22-autumn-4564545_1920.jpg" alt="Eine Frau mti roten Haaren, welche in die Kamera schaut.">
+            <div class="featureGalleryText">
+                <h2 class="featureGalleryHeading">Ihre neue Brille beginnt hier!</h2>
+                <p>Wikommen bei SchönesGlas, ihrem Optiker der Zukunft. Hier steht ihre Sicht im Vordergrund. Lassen sie sich durch unsere Erstklassigen Produkte und Services verzaubern.</p>
+                <button class="callToAction">Jetzt Termin vereinbaren</button>
+            </div>
+        
+            <div class="imageGallery">
+                <img class="imageGalleryImage1" src="img/dantaslevi-model-3687259_1920.jpg" alt="Eine junge Frau, mit einer schwarzen Brille, welche in die Kamera schaut.">
+                <img class="imageGalleryImage2" src="img/hans-glasses-272399_1920.jpg" alt="Eine Brille auf einem Buch mit einem Textmarker daneben.">
+                <img class="imageGalleryImage3" src="img/nikolapeskova-girl-619665_1920.jpg" alt="Eine Frau mit einer Sonenbrille, welche in einem Rapsfeld steht.">
+                <img class="imageGalleryImage4" src="img/radu_floryn22-autumn-4564545_1920.jpg" alt="Eine Frau mti roten Haaren, welche in die Kamera schaut.">
+            </div>
         </section>
 
         <!--Customer Reviews-->
         <section class="customerReviews">
             <h2>Ein Wort von unseren Kunden</h2>
             <p>Sehen sie, was unsere Kunden über und denken:</p>
-            <article>
-                <img src="img/smiley-kommentar-alt.svg" alt="Ein Smiley, welcher einen Kommentar eines Kunden kennzeichnet.">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, sapiente.</p>
-                <p>Max Mustermann</p>
-            </article>
-            <article>
-                <img src="img/smiley-kommentar-alt.svg" alt="Ein Smiley, welcher einen Kommentar eines Kunden kennzeichnet.">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, facilis..</p>
-                <p>Max Mustermann</p>
-            </article>
+            <div class="reviewCards">
+                <article class="reviewCard">
+                    <img src="img/smiley-kommentar-alt.svg" alt="Ein Smiley, welcher einen Kommentar eines Kunden kennzeichnet.">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, sapiente.</p>
+                    <p>Max Mustermann</p>
+                </article>
+                <article class="reviewCard">
+                    <img src="img/smiley-kommentar-alt.svg" alt="Ein Smiley, welcher einen Kommentar eines Kunden kennzeichnet.">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, facilis..</p>
+                    <p>Max Mustermann</p>
+                </article>
+            </div>
         </section>
     </main>
 
