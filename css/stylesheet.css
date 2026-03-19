@@ -181,7 +181,6 @@ justify-items: center;
 .reviewCard {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     padding: 2vw;
     border-radius: 50px;
     border: 1px grey solid;
@@ -196,9 +195,16 @@ justify-items: center;
 
 .reviewCard strong {
     font-size: 2vw;
-    grid-area: 1 / 2 /2 /6;
+    grid-area: 1 / 2 /2 / 6;
 }
 
 .reviewCard p {
-    grid-area: 2 / 1 / 2 / 6;
+    grid-area: 3 / 1 / 4 / 6;
 }
+
+.reviewCard .job {
+    grid-area: 2 / 2 / 4 / 6
+}
+
+/* Footer Styling */
+
