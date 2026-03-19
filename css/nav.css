@@ -1,0 +1,48 @@
+/* Navbar Styling */
+
+button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: clamp(2.5vw);
+    min-width: 5vw;
+    font-size: large;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Navbar Styling */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0vw 2vw 0vw 2vw;
+    background-color: white;
+}
+
+.navbarLeft, .navbarRight {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+}
+
+.companyName {
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.logo {
+    width: 5vw
+}
+
+.callToAction {
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+}

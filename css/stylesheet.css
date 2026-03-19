@@ -34,36 +34,6 @@ a {
     color: black;
 }
 
-/* Navbar Styling */
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 0vw 2vw 0vw 2vw;
-    background-color: white;
-}
-
-.navbarLeft, .navbarRight {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-}
-
-.companyName {
-    font-weight: bold;
-    font-size: 2vw;
-}
-
-.logo {
-    width: 5vw
-}
-
-.callToAction {
-    color: white;
-    background-color: black;
-    border-radius: 20px;
-}
-
 /* Landing Frame Styling */
 
 .landingFrame {
@@ -205,39 +175,3 @@ justify-items: center;
 .reviewCard .job {
     grid-area: 2 / 2 / 4 / 6
 }
-
-/* Footer Styling */
-
-.footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-content: center;
-    justify-content: center;
-    background-image: url(../img/blurry-gradient-haikei.svg);
-    background-size: cover;
-    height: 25vh;
-}
-
-.footer ul {
-    list-style-type: none;
-    justify-items: left;
-    justify-content: center;
-}
-
-.footer ul li a {
-    color: white;
-}
-
-.footer ul li {
-    margin: 0 auto 0 auto;
-}
-
-.footer h3 {
-    justify-self: center;
-    align-content: center;
-}
-
-.footer h3 a {
-    color: white;
-}
-
