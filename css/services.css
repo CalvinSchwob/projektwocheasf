@@ -21,16 +21,14 @@ h1 {
 .productsGallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
 
 }
+
 
 .productImage {
     width: 30vw;
     margin: 0 2vw 0 2vw;
     border-radius: 20px;
-    background-image: url(../img/layered-waves-haikei.svg);
-    background-size: cover;
 }
 
 .productText {

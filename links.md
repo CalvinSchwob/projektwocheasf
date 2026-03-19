@@ -10,7 +10,7 @@ https://meshgradient.com/?w=eyJzIjpbWy0wLjg1LC0wLjldLFstMC45NSwwLjldLFswLjg1LC0w
 
 https://fonts.google.com/selection?query=Inter
 
-# backgroudn landingframe
+# background landingframe + product background
 
 https://app.haikei.app/
 
@@ -25,3 +25,12 @@ box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0p
 # dropdownmenü
 
 https://uiverse.io/gharsh11032000/loud-puma-8
+
+# images
+
+barron: https://www.brille24.de/brillen/rahmen/barron-crystal-honey-m-33102
+clair: https://www.brille24.de/brillen/rahmen/claire-pink-gold-purple-l-26434
+steven: https://www.brille24.de/brillen/rahmen/steven-s-crystal-peach-s-32954
+rb6375: https://www.brille24.de/brillen/rahmen/rb6375-schwarz-auf-gold-m-26214
+maverick: https://www.brille24.de/brillen/rahmen/maverick-light-gold-titanium-xl-32844
+ceo: https://www.brille24.de/brillen/rahmen/ceo-navy-blue-m-32861
