@@ -1,4 +1,9 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+echo "Seite lädt... POST: "; print_r($_POST); echo "<br>";
+session_start();
+
 session_start();
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: mitarbeiterbereich.php");
