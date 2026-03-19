@@ -70,3 +70,18 @@ main {
   -webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 5px 5px 15px 5px rgba(0,0,0,0); 
 box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 5px 5px 15px 5px rgba(0,0,0,0);
 }
+
+.consent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;;
+}
+
+.consent input {
+  width: 2vw;
+}
+
+.consent p {
+  grid-area: 1 / 2 / 2 / 4;
+}
