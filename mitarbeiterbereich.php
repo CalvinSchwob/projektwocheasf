@@ -92,7 +92,6 @@ $db->close();
             </p>
             <button type="submit">Anlegen</button>
         </form>
-        <p><a href="login.php">← Zurück zum Login</a></p>
     <?php endif; ?>
 </body>
 </html>
