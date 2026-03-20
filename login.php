@@ -1,80 +1,91 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+session_start(); // Ganz oben!
 
-// Session nur starten wenn nicht aktiv
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
+// Bereits eingeloggt? Weiterleiten
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: mitarbeiterbereich.php");
+    header("Location: mitarbeiterbereich.php");
     exit;
 }
 
-require_once "config.php";
+// DB-Verbindung
+$db = new mysqli("localhost", "root", "", "optiker_db"); // root/leer für XAMPP!
+if ($db->connect_error) {
+    die("Connection Failed: " . $db->connect_error);
+}
 
 $email = $passwort = "";
 $email_err = $passwort_err = $login_err = "";
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sichere POST-Prüfung
-    $email = isset($_POST["email"]) ? trim($_POST["email"]) : "";
-    $passwort = isset($_POST["passwort"]) ? trim($_POST["passwort"]) : "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = trim($_POST["email"] ?? "");
+    $passwort = trim($_POST["passwort"] ?? "");
     
-    if(empty($email)) {
+    if (empty($email)) {
         $email_err = "E-Mail eingeben.";
     }
-    if(empty($passwort)) {
+    if (empty($passwort)) {
         $passwort_err = "Passwort eingeben.";
     }
     
-    if(empty($email_err) && empty($passwort_err)) {
-        // $param_email DEFINIEREN! (fehlte)
-        $param_email = $email;
+    if (empty($email_err) && empty($passwort_err)) {
+        // Prepared Statement (sicher!)
+        $stmt = $db->prepare("SELECT id, email, passwort FROM mitarbeiter WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
         
-        $sql = "SELECT id, email, passwort FROM mitarbeiter WHERE email = ?";
-        if($stmt = mysqli_prepare($link, $sql)) {
-            mysqli_stmt_bind_param($stmt, "s", $param_email);
-            mysqli_stmt_execute($stmt);
-            mysqli_stmt_store_result($stmt);
+        if ($stmt->num_rows == 1) {
+            $stmt->bind_result($id, $email, $hashed_passwort);
+            $stmt->fetch();
             
-            if(mysqli_stmt_num_rows($stmt) == 1) {
-                mysqli_stmt_bind_result($stmt, $id, $email, $hashed_passwort);
-                mysqli_stmt_fetch($stmt);
+            if (password_verify($passwort, $hashed_passwort)) {
+                // Login OK!
+                $_SESSION["loggedin"] = true;
+                $_SESSION["id"] = $id;
+                $_SESSION["email"] = $email;
                 
-                if(password_verify($passwort, $hashed_passwort)) {
-                    session_regenerate_id(); // Sicherheit
-                    $_SESSION["loggedin"] = true;
-                    $_SESSION["id"] = $id;
-                    $_SESSION["email"] = $email;
-                    header("location: mitarbeiterbereich.php");
-                    exit;
-                } else {
-                    $login_err = "Falsche E-Mail oder Passwort.";
-                }
+                header("Location: mitarbeiterbereich.php");
+                exit;
             } else {
                 $login_err = "Falsche E-Mail oder Passwort.";
             }
-            mysqli_stmt_close($stmt);
         } else {
-            $login_err = "DB-Fehler: " . mysqli_error($link);
+            $login_err = "Falsche E-Mail oder Passwort.";
         }
+        $stmt->close();
     }
-    mysqli_close($link);
 }
+$db->close();
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Login</title></head>
+<head>
+    <title>Mitarbeiter Login</title>
+    <style>body{font-family:Arial; max-width:400px; margin:100px auto;}</style>
+</head>
 <body>
-<?php if(!empty($login_err)): ?>
-    <div style="color:red"><?php echo $login_err; ?></div>
-<?php endif; ?>
-<form method="post">
-    <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" placeholder="admin@optiker.de" required><br>
-    <input type="password" name="passwort" placeholder="password" required><br>
-    <button type="submit">Login</button>
-</form>
+    <h2>Optiker Mitarbeiter Login</h2>
+    
+    <?php if(!empty($login_err)): ?>
+        <div style="color:red; padding:10px; border:1px solid red; margin:10px 0;">
+            <?php echo $login_err; ?>
+        </div>
+    <?php endif; ?>
+    
+    <form method="POST">
+        <p>
+            <label>E-Mail:</label><br>
+            <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" 
+                   placeholder="admin@optiker.de" style="width:100%; padding:10px;" required>
+        </p>
+        <p>
+            <label>Passwort:</label><br>
+            <input type="password" name="passwort" placeholder="password" 
+                   style="width:100%; padding:10px;" required>
+        </p>
+        <button type="submit" style="width:100%; padding:12px; background:#007cba; color:white; border:none; cursor:pointer;">
+            Einloggen
+        </button>
+    </form>
 </body>
 </html>
