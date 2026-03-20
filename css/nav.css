@@ -26,6 +26,10 @@ a {
     color: black;
 }
 
+.navbarRight .callToAction a {
+  color: white;
+}
+
 /* Navbar Styling */
 
 nav {
