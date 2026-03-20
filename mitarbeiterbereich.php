@@ -70,6 +70,8 @@ $db->close();
         input{width:100%; padding:10px; margin:5px 0;}
         button{width:100%; padding:12px; background:#28a745; color:white; border:none;}
     </style>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
     <nav>
