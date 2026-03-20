@@ -143,6 +143,25 @@ $db->close();
             <button type="submit">Anlegen</button>
         </form>
     <?php endif; ?>
+
+    <footer class="footer">
+        <h3><a href="../index.html">SchönesGlas</a></h3>
+        <ul>
+            <li><a href="../index.html">Startseite</a></li>
+            <li><a href="./products.html">Produkte</a></li>
+        </ul>
+        
+        <ul>
+            <li><a href="./services.html">Dienstleistungen</a></li>
+            <li><a href="./contact.html">Kontakt</a></li>
+            <li><a href="./impressum.html">Impressum</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="./aboutUs.html">Über uns</a></li>
+            <li><a href="./login.html">Für Mitarbeiter</a></li>
+        </ul>
+    </footer>
 </body>
 </html>
 
